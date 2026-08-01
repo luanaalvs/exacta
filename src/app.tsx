@@ -1,63 +1,7 @@
 import "@/styles/index.css";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Scale, ShieldCheck, Target, Clock, Users } from "lucide-react";
-
-interface PrinciplesProps {
-  title: string;
-  description: string;
-}
-
-const principles: PrinciplesProps[] = [
-  {
-    title: "Missão",
-    description:
-      "Oferecer serviços técnicos de vistoria e assessoria em arquitetura com precisão, transparência e qualidade, garantindo segurança e confiabilidade nas relações entre proprietários, locatários e empresas.",
-  },
-  {
-    title: "Visão",
-    description:
-      "Ser reconhecida como referência em serviços de vistoria e consultoria técnica na região de São Paulo e Grande ABC.",
-  },
-  {
-    title: "Valores",
-    description:
-      "Nossos valores são a base de cada decisão e de cada relacionamento. Eles estão presentes em tudo o que fazemos.",
-  },
-];
-
-interface ValueProps {
-  title: string;
-  description: string;
-  icon: React.ComponentType<{ className?: string }>;
-}
-
-const values: ValueProps[] = [
-  {
-    title: "Ética Profissional",
-    description: "Atuamos com integridade, responsabilidade e respeito.",
-    icon: Scale,
-  },
-  {
-    title: "Transparência",
-    description: "Comunicação clara e verdadeira em todas as etapas.",
-    icon: ShieldCheck,
-  },
-  {
-    title: "Precisão Técnica",
-    description: "Análises detalhadas e laudos com alto padrão de qualidade.",
-    icon: Target,
-  },
-  {
-    title: "Compromisso com Prazos",
-    description: "Respeitamos o tempo do cliente e entregamos com eficiência.",
-    icon: Clock,
-  },
-  {
-    title: "Atendimento Personalizado",
-    description: "Cada cliente é único e merece atenção exclusiva.",
-    icon: Users,
-  },
-];
+import { principles } from "@/data/principles";
+import { values } from "@/data/values";
 
 export function App() {
   return (
