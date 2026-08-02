@@ -80,24 +80,45 @@ export function App() {
           ))}
         </div>
 
-        <div className='mt-24 grid grid-cols-1 gap-4 lg:grid-cols-5'>
-          {values.map((value) => (
-            <Card
-              key={value.title}
-              className='group relative h-40 overflow-hidden border border-white/5 bg-transparent shadow-lg shadow-black/40 transition-colors duration-300 hover:bg-white/10'
-            >
-              <CardHeader className='h-full flex flex-col items-center justify-center text-center transition-opacity duration-300 group-hover:opacity-0'>
-                <value.icon className='h-8 w-8 text-white/20' />
-                <CardTitle className='mt-4 text-xs font-semibold uppercase tracking-widest text-white'>
-                  {value.title}
-                </CardTitle>
-              </CardHeader>
+        {/* Valores */}
+        <div className='mt-24'>
+          <h2 className='font-serif text-4xl md:text-5xl leading-tight max-w-2xl'>
+            Vamos construir juntos{" "}
+            <em className='italic'>sólidas e eficientes</em>
+          </h2>
 
-              <CardContent className='absolute inset-0 flex items-center justify-center p-6 text-center opacity-0 transition-opacity duration-300 group-hover:opacity-100'>
-                <p className='text-sm text-white/70'>{value.description}</p>
-              </CardContent>
-            </Card>
-          ))}
+          {/* Lista para telas até md (tablet e celular) */}
+          <div className='mt-12 divide-y divide-white/10 lg:hidden'>
+            {values.map((value) => (
+              <div key={value.title} className='py-8'>
+                <value.icon className='h-6 w-6 text-white/40' />
+                <h3 className='font-serif text-2xl mt-4'>{value.title}</h3>
+                <p className='mt-2 text-white/60 leading-relaxed'>
+                  {value.description}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <div className='mt-12 hidden lg:grid grid-cols-5 gap-5'>
+            {values.map((value) => (
+              <Card
+                key={value.title}
+                className='group relative h-40 overflow-hidden border border-white/5 bg-transparent shadow-lg shadow-black/40 transition-colors duration-300 hover:bg-white/10'
+              >
+                <CardHeader className='h-full flex flex-col items-center justify-center text-center transition-opacity duration-300 group-hover:opacity-0'>
+                  <value.icon className='h-8 w-8 text-white/20' />
+                  <CardTitle className='mt-4 text-xs font-semibold uppercase tracking-widest text-white'>
+                    {value.title}
+                  </CardTitle>
+                </CardHeader>
+
+                <CardContent className='absolute inset-0 flex items-center justify-center p-6 text-center opacity-0 transition-opacity duration-300 group-hover:opacity-100'>
+                  <p className='text-sm text-white/70'>{value.description}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         </div>
       </section>
 
