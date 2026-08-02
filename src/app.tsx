@@ -4,12 +4,13 @@ import { cn } from "@/lib/utils";
 import { principles } from "@/data/principles";
 import { values } from "@/data/values";
 import { services } from "@/data/services";
-import { founders } from "./data/founder";
+import { founders } from "@/data/founder";
+import { Header } from "@/components/header";
 
 export function App() {
   return (
     <div>
-      <h1>Exacta Vistorias, Arquitetura e Engenharia</h1>
+      <Header />
 
       {/* Quem somos */}
       <section
@@ -68,7 +69,10 @@ export function App() {
       </section>
 
       {/* Missão, visão e valores */}
-      <section className='h-full container-px section-py bg-accent-foreground text-primary-foreground'>
+      <section
+        id='principios'
+        className='h-full container-px section-py bg-accent-foreground text-primary-foreground'
+      >
         <div>
           <div>
             <p className='eyebrow text-white/60 uppercase tracking-[4px] text-[12px] font-extralight'>
@@ -142,7 +146,10 @@ export function App() {
       </section>
 
       {/* Serviços */}
-      <section className='section-py bg-background text-foreground'>
+      <section
+        id='servicos'
+        className='section-py bg-background text-foreground'
+      >
         <div className='container-px grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-12 lg:gap-20 items-start'>
           <div>
             <p className='eyebrow text-muted-foreground uppercase tracking-[4px] text-[12px] font-extralight'>
