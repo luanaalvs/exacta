@@ -1,7 +1,9 @@
 import "@/styles/index.css";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { cn } from "@/lib/utils";
 import { principles } from "@/data/principles";
 import { values } from "@/data/values";
+import { services } from "@/data/services";
 
 export function App() {
   return (
@@ -96,6 +98,58 @@ export function App() {
               </CardContent>
             </Card>
           ))}
+        </div>
+      </section>
+
+      {/* Serviços */}
+      <section className='section-py bg-background text-foreground'>
+        <div className='container-px grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-12 lg:gap-20 items-start'>
+          <div>
+            <p className='eyebrow text-muted-foreground uppercase tracking-[4px] text-[12px] font-extralight'>
+              Serviços
+            </p>
+            <div className='hairline mt-4 mb-8 bg-foreground w-12 h-px' />
+
+            <h2 className='font-serif text-4xl md:text-5xl leading-tight'>
+              Soluções completas, do <em className='italic'>conceito</em> à
+              entrega.
+            </h2>
+
+            <p className='mt-8 text-muted-foreground leading-relaxed max-w-sm'>
+              Atuação técnica integrada para imóveis residenciais, comerciais e
+              corporativos.
+            </p>
+          </div>
+
+          <div className='grid grid-cols-1 sm:grid-cols-2'>
+            {services.map((service, index) => {
+              const isLastColumn = index % 2 === 1;
+              const isLastRow = index >= services.length - 2;
+
+              return (
+                <div
+                  key={service.title}
+                  className={cn(
+                    "group p-8 border-border transition-colors duration-300 hover:bg-black cursor-default",
+                    index !== services.length - 1 && "border-b",
+                    isLastRow && "sm:border-b-0",
+                    !isLastColumn && "sm:border-r",
+                  )}
+                >
+                  <service.icon
+                    className='h-6 w-6 transition-colors duration-300 group-hover:text-white'
+                    strokeWidth={1.5}
+                  />
+                  <h3 className='font-serif text-xl mt-6 group-hover:text-white'>
+                    {service.title}
+                  </h3>
+                  <p className='mt-2 text-muted-foreground leading-relaxed group-hover:text-white/70'>
+                    {service.description}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </section>
     </div>
