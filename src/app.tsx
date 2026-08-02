@@ -8,8 +8,46 @@ export function App() {
     <div>
       <h1>Exacta Vistorias, Arquitetura e Engenharia</h1>
 
+      {/* Quem somos */}
+      <section className='section-py bg-background text-foreground'>
+        <div className='container-px grid grid-cols-1 lg:grid-cols-[2fr_3fr] gap-12 lg:gap-20 items-center'>
+          <div className='order-2 lg:order-1'>
+            <div className='aspect-4/5 w-full max-w-md mx-auto lg:max-w-none lg:w-full overflow-hidden'>
+              <img
+                src='/founder.jpeg'
+                className='w-full h-full object-cover grayscale'
+              />
+            </div>
+          </div>
+
+          <div className='order-1 lg:order-2'>
+            <p className='eyebrow text-muted-foreground uppercase tracking-[4px] text-[12px] font-extralight'>
+              Quem somos
+            </p>
+            <div className='hairline mt-4 mb-8 bg-foreground w-12 h-px' />
+
+            <h2 className='font-serif text-4xl md:text-5xl leading-tight'>
+              Mais do que serviços, entregamos{" "}
+              <em className='italic'>confiança.</em>
+            </h2>
+
+            <p className='mt-8 text-muted-foreground leading-relaxed max-w-xl'>
+              A Exacta Vistorias nasce do compomisso com a precisão técnica e a
+              excelência no atendimento. Atuamos com vistorias, arquitetura e
+              acessoria oferecendo segurança e confiabilidade nas relações entre
+              proprietários, locatários e empresas — porque acreditamos que
+              credibilidade se constrói no detalhe.
+            </p>
+
+            <p className='mt-8 uppercase tracking-[3px] text-[12px] text-muted-foreground'>
+              Conte com a Exacta · Conte com especialistas
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Missão, visão e valores */}
-      <section className='h-full container-px py-28 section-py bg-accent-foreground text-primary-foreground'>
+      <section className='h-full container-px section-py bg-accent-foreground text-primary-foreground'>
         <div>
           <div>
             <p className='eyebrow text-white/60 uppercase tracking-[4px] text-[12px] font-extralight'>
