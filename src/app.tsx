@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils";
 import { principles } from "@/data/principles";
 import { values } from "@/data/values";
 import { services } from "@/data/services";
+import { founders } from "./data/founder";
 
 export function App() {
   return (
@@ -11,39 +12,57 @@ export function App() {
       <h1>Exacta Vistorias, Arquitetura e Engenharia</h1>
 
       {/* Quem somos */}
-      <section className='section-py bg-background text-foreground'>
-        <div className='container-px grid grid-cols-1 lg:grid-cols-[2fr_3fr] gap-12 lg:gap-20 items-center'>
-          <div className='order-2 lg:order-1'>
-            <div className='aspect-4/5 w-full max-w-md mx-auto lg:max-w-none lg:w-full overflow-hidden'>
-              <img
-                src='/founder.jpeg'
-                className='w-full h-full object-cover grayscale'
-              />
-            </div>
-          </div>
+      <section
+        id='quem-somos'
+        className='scroll-mt-24 section-py bg-background text-foreground'
+      >
+        <div className='container-px'>
+          <p className='eyebrow text-muted-foreground uppercase tracking-[4px] text-[12px] font-extralight'>
+            Quem somos
+          </p>
 
-          <div className='order-1 lg:order-2'>
-            <p className='eyebrow text-muted-foreground uppercase tracking-[4px] text-[12px] font-extralight'>
-              Quem somos
-            </p>
-            <div className='hairline mt-4 mb-8 bg-foreground w-12 h-px' />
+          <div className='hairline mt-4 mb-8 bg-foreground w-12 h-px' />
 
-            <h2 className='font-serif text-4xl md:text-5xl leading-tight'>
-              Mais do que serviços, entregamos{" "}
-              <em className='italic'>confiança.</em>
-            </h2>
+          <h2 className='font-serif text-4xl md:text-5xl leading-tight'>
+            Mais do que serviços, entregamos{" "}
+            <em className='italic'>confiança.</em>
+          </h2>
 
-            <p className='mt-8 text-muted-foreground leading-relaxed max-w-xl'>
-              A Exacta Vistorias nasce do compomisso com a precisão técnica e a
-              excelência no atendimento. Atuamos com vistorias, arquitetura e
-              acessoria oferecendo segurança e confiabilidade nas relações entre
-              proprietários, locatários e empresas — porque acreditamos que
-              credibilidade se constrói no detalhe.
-            </p>
+          <p className='mt-8 text-muted-foreground leading-relaxed max-w-xl'>
+            A Exacta Vistorias nasce do compromisso com a precisão técnica e a
+            excelência no atendimento. Atuamos com vistorias, arquitetura e
+            assessoria oferecendo segurança e confiabilidade nas relações entre
+            proprietários, locatários e empresas — porque acreditamos que
+            credibilidade se constrói no detalhe.
+          </p>
 
-            <p className='mt-8 uppercase tracking-[3px] text-[12px] text-muted-foreground'>
-              Conte com a Exacta · Conte com especialistas
-            </p>
+          <p className='mt-8 uppercase tracking-[3px] text-[12px] text-muted-foreground'>
+            Conte com a Exacta · Conte com especialistas
+          </p>
+
+          {/* Fundadores */}
+          <div className='mt-20 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-8 lg:gap-12'>
+            {founders.map((founder) => (
+              <div key={founder.name}>
+                <div className='aspect-3/4 w-full overflow-hidden'>
+                  <img
+                    src={founder.image}
+                    alt={`${founder.name}, ${founder.role}`}
+                    className='w-full h-full object-cover grayscale'
+                  />
+                </div>
+
+                <div className='mt-8'>
+                  <p className='font-serif text-2xl'>{founder.name}</p>
+                  <p className='text-muted-foreground uppercase tracking-[3px] text-[11px] mt-2'>
+                    {founder.role}
+                  </p>
+                  <p className='mt-4 text-muted-foreground leading-relaxed'>
+                    {founder.bio}
+                  </p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -83,7 +102,7 @@ export function App() {
         {/* Valores */}
         <div className='mt-24'>
           <h2 className='font-serif text-4xl md:text-5xl leading-tight max-w-2xl'>
-            Vamos construir juntos{" "}
+            Vamos construir juntos soluções{" "}
             <em className='italic'>sólidas e eficientes</em>
           </h2>
 
@@ -104,7 +123,7 @@ export function App() {
             {values.map((value) => (
               <Card
                 key={value.title}
-                className='group relative h-40 overflow-hidden border border-white/5 bg-transparent shadow-lg shadow-black/40 transition-colors duration-300 hover:bg-white/10'
+                className='group relative h-40 overflow-hidden border border-white/5 bg-transparent shadow-lg shadow-black/40 transition-colors duration-300 hover:bg-white/10 hover:cursor-default'
               >
                 <CardHeader className='h-full flex flex-col items-center justify-center text-center transition-opacity duration-300 group-hover:opacity-0'>
                   <value.icon className='h-8 w-8 text-white/20' />
